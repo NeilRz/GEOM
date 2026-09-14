@@ -310,3 +310,16 @@
 .geom-site .gap-note{margin-top:22px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#7D8F9B}
 
 .geom-site .gap-src{display:block;margin-top:4px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7D8F9B}
+
+/* Members: hyperlinked logo tiles. These logos carry their own background
+   colours, so they sit as self-contained rounded tiles rather than inside
+   the white founder cards. Height-normalised; width follows each ratio. */
+.geom-site .members{margin-top:clamp(42px,6vh,68px);text-align:center}
+.geom-site .members-h{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ice-dark);margin-bottom:clamp(20px,3vh,30px)}
+.geom-site .mlogos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(16px,3vw,34px)}
+.geom-site .mchip{display:block;line-height:0;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(12,21,25,.06);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.geom-site .mchip:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(12,21,25,.12)}
+.geom-site .mchip img{display:block;height:clamp(46px,5.6vw,58px);width:auto;max-width:100%;object-fit:contain}
+.geom-site .mchip.stacked img{height:clamp(68px,8.4vw,88px)}
+@media(max-width:560px){.geom-site .mchip img{height:42px}
+.geom-site .mchip.stacked img{height:62px}}
