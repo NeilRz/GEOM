@@ -5,6 +5,97 @@
   },
   "anchors": [
     {
+      "anchoredAt": "2026-09-16T23:44:39.000Z",
+      "cluster": "mainnet-beta",
+      "slot": 447650498,
+      "signature": "goj9Y7Wfpcxcv5aEdzSYqrvtzH7Mb7ikDvhuLvqfUJbt9kyUBU5qLRvSyNxVMsgvNxnNtaBRho3bh4gM5h37yPS",
+      "signer": "3khTgJAs6pY9y2sMVeBQmrhLbeBoGdGm8SiRUxFaArQU",
+      "memo": "GAEA-ANCHOR-V1|62f262eb9c0e01c32f0c8eca8cb213f7cc43bf930d2d08e1433aea267b2982cf",
+      "manifestSha256": "62f262eb9c0e01c32f0c8eca8cb213f7cc43bf930d2d08e1433aea267b2982cf",
+      "datasets": [
+        {
+          "id": "eia",
+          "version": "2026-09-11",
+          "sha256": "7c19db936e28e403f6078ce0dac6270cab71d877c80da8e2872050971ebc2a99"
+        },
+        {
+          "id": "electricity",
+          "version": "2025",
+          "sha256": "ded201908758e94e72aeaeb09a080c3c5c565f4640b1c3a49362db2c8b8d6fb5"
+        },
+        {
+          "id": "fields",
+          "version": "0.2.0",
+          "sha256": "04d3248d82dadc3f732c48eea2fcb82566761d358f381f75878bd881f8f37c2f"
+        },
+        {
+          "id": "goget",
+          "version": "2026-03",
+          "sha256": "da151d4fece524eb8f98d2f1045bce4d8349859cba2837a138430f6ac4eb527f"
+        },
+        {
+          "id": "goit",
+          "version": "2026-02",
+          "sha256": "5e860ba1bc39b041516c6ad4c1f7aaf32c259083b599e016b37d72c6218bc8c3"
+        },
+        {
+          "id": "jodi",
+          "version": "2026-05",
+          "sha256": "f5a9d14322917a117233c65a5170b0ab3c94f7ddbf1622d7a803a7ece30fc106"
+        },
+        {
+          "id": "market",
+          "version": "0.1.0",
+          "sha256": "3c8183d60603a682ab4bd8a5008ac1d7db5c824678d1f970dbb72c033cdedf9b"
+        },
+        {
+          "id": "minerals",
+          "version": "2026",
+          "sha256": "d259df8503af4760ddd5f86944975c00bba1a73a36b872e3a8e1e898946be1b0"
+        },
+        {
+          "id": "noc",
+          "version": "2024",
+          "sha256": "5a96db2681a31f8ede38a52f0bf8d8db175e8a14b70b4ed2db397754afe5923e"
+        },
+        {
+          "id": "pipelines",
+          "version": "0.1.0",
+          "sha256": "c960522062f9483dcc02d7ba2b3b065e8f340343a43169885f86bac8fb3b2293"
+        },
+        {
+          "id": "plants",
+          "version": "2026-02",
+          "sha256": "8161592ff23c54bbdce3fe4617dbdfb08a9cbff16d3a8ee691754a3df0e18649"
+        },
+        {
+          "id": "prices",
+          "version": "2026-08-29T10:53Z",
+          "sha256": "47ff93c5bc8cb5a1133e1cddf0018d4717946e9f5da030e88a1d7da3ac6ff84a"
+        },
+        {
+          "id": "reserves",
+          "version": "0.1.0",
+          "sha256": "72a9bff19c4030931bdab2dbf757cbba0340c92e1e37a75d8b26736e92f44632"
+        },
+        {
+          "id": "sites",
+          "version": "0.1.0",
+          "sha256": "0df77f7d1c9d2cd09318ddb5739ee6b8ac44fc2b7eba6e72a03c0e00ea41e9aa"
+        },
+        {
+          "id": "spots",
+          "version": "2026-09-15",
+          "sha256": "dd5025b95ba9a7333ebda6a80303c41afa37c5eced87ed6f08b90e5a6c453885"
+        },
+        {
+          "id": "tokenized",
+          "version": "0.2.0",
+          "sha256": "015f48514dd188263f1517aafe665fa5c3d508e5c8ed4513597cd68fce8a086c"
+        }
+      ]
+    },
+    {
       "anchoredAt": "2026-09-11T15:54:11.000Z",
       "cluster": "mainnet-beta",
       "slot": 446195930,
