@@ -1,0 +1,106 @@
+/* Oracle workspace: publication evidence and a quiet, readable registry. */
+.oracle-workspace { height:100%; min-height:0; display:flex; flex-direction:column; background:var(--bg); }
+.oracle-publication { display:grid; grid-template-columns:minmax(0,1fr) 340px; align-items:center; gap:32px; padding:28px 30px; border-bottom:1px solid var(--line); }
+.oracle-intro h1 { font-family:var(--font-body); font-size:clamp(24px,2.5vw,36px); font-weight:500; line-height:1.16; letter-spacing:-.035em; margin:0 0 12px; }
+.oracle-intro p { color:var(--ink-2); max-width:54ch; font-size:14px; line-height:1.65; margin:0; }
+.oracle-proof-path { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; font-size:11px; color:var(--glacial-bright); }
+.oracle-proof-path span:nth-child(even) { color:var(--ink-3); }
+.oracle-receipt { background:var(--bg-raised); border:1px solid var(--line-strong); border-left:3px solid var(--glacial); border-radius:0 8px 8px 0; padding:15px 17px 12px; }
+.oracle-receipt-top { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:12px; }
+.oracle-receipt-state { color:#8dcbb8; font-size:10px; }
+.oracle-receipt-state.warning { color:var(--amber-bright); }
+.oracle-receipt dl { margin:13px 0; font-size:11px; }
+.oracle-receipt dl div { display:flex; justify-content:space-between; gap:12px; padding:3px 0; }
+.oracle-receipt dt { color:var(--ink-3); }
+.oracle-receipt dd { margin:0; font-family:var(--font-mono); font-size:10px; }
+.oracle-receipt-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding-top:9px; border-top:1px solid var(--line); font-size:10px; color:var(--ink-3); }
+.oracle-receipt-bottom a { color:var(--glacial-bright); text-decoration:underline; text-underline-offset:3px; }
+.oracle-workspace .ex-shell { flex:1; height:auto; min-height:0; }
+.oracle-workspace .ex-rail { width:214px; padding:18px 16px; gap:20px; background:var(--bg); }
+.oracle-workspace .lib-search { border-radius:5px; font-family:var(--font-body); font-size:12px; letter-spacing:0; }
+.oracle-workspace .ex-group-title { text-transform:none; font-family:var(--font-body); font-size:12px; letter-spacing:0; color:var(--ink-2); }
+.oracle-workspace .ex-check { border-radius:3px; padding:6px 3px; }
+.oracle-workspace .ex-check-count { border:0; padding-right:0; }
+.oracle-workspace .ex-body { overflow:hidden; }
+.ex-views { display:flex; flex-wrap:wrap; gap:4px 20px; padding:13px 20px 0; border-bottom:1px solid var(--line); }
+.ex-views button { background:none; color:var(--ink-3); border:0; border-bottom:2px solid transparent; padding:8px 0 12px; font:inherit; font-size:12px; cursor:pointer; }
+.ex-views button[aria-pressed="true"] { color:var(--ink); border-bottom-color:var(--glacial-bright); }
+.ex-views button span { margin-left:7px; color:var(--ink-3); font-family:var(--font-mono); font-size:10px; }
+.ex-context { margin:0; padding:10px 20px; font-size:11px; color:var(--ink-3); }
+.ex-table-scroll { flex:1; min-height:100px; overflow:auto; }
+.oracle-workspace .ex-body table.data { min-width:940px; }
+.oracle-workspace .ex-body table.data th { font-family:var(--font-body); font-size:11px; letter-spacing:0; text-transform:none; background:var(--bg-raised); padding:11px 14px; }
+.oracle-workspace .ex-body table.data td { padding:12px 14px; }
+.oracle-workspace .ex-body table.data td:first-child { min-width:250px; }
+.oracle-workspace .catalog-row { background:none !important; animation:none !important; }
+.oracle-workspace .catalog-row:hover { background:var(--panel-2) !important; }
+.oracle-workspace .catalog-row:focus-within { background:var(--panel-2) !important; }
+.oracle-workspace .ex-rows tr { animation:none; }
+.oracle-workspace .catalog-row .ex-avatar { border-radius:4px; width:28px; height:28px; transform:none; }
+.ex-open { border:0; background:none; padding:0; cursor:pointer; color:var(--ink); text-align:left; font-size:12px; }
+.ex-open:hover { color:var(--glacial-bright); text-decoration:underline; text-underline-offset:3px; }
+.oracle-workspace .badge { background:transparent; border:0; padding:0; font-size:10px; letter-spacing:0; text-transform:none; }
+.oracle-workspace .chain-cell { white-space:nowrap; }
+.chain-marks { display:inline-flex; align-items:center; gap:7px; color:var(--ink-2); vertical-align:middle; }
+.chain-mark { display:block; flex:none; }
+.oracle-workspace .ex-foot { margin-top:0; text-transform:none; letter-spacing:0; font-size:10px; padding:9px 20px; }
+.oracle-workspace .ex-empty { white-space:normal; color:var(--ink-2); height:120px; }
+.oracle-detail .o-head { padding-bottom:24px; border-bottom:1px solid var(--line); margin-bottom:24px; }
+.oracle-detail .panel { border-radius:7px; box-shadow:none; }
+.oracle-detail .panel-title { text-transform:none; letter-spacing:0; font-family:var(--font-body); font-size:14px; }
+.oracle-detail .o-head .page-title { font-size:30px !important; line-height:1.25; letter-spacing:-.025em; }
+.oracle-detail .eyebrow { text-transform:none; letter-spacing:0; color:var(--glacial-bright); }
+@media (max-width:1250px) {
+ .oracle-publication { grid-template-columns:minmax(0,1fr) 290px; gap:20px; padding:23px; }
+ .oracle-workspace .ex-rail { width:190px; padding:15px 12px; }
+ .oracle-workspace .ex-body table.data { min-width:640px; }
+ /* Columns: symbol, type, category, chain, status, mint, details, version, trend, arrow.
+    Narrow screens keep symbol, type, chain, status and mint. */
+ .oracle-workspace table.data tr > :nth-child(3), .oracle-workspace table.data tr > :nth-child(7), .oracle-workspace table.data tr > :nth-child(8), .oracle-workspace table.data tr > :nth-child(9) { display:none; }
+}
+@media (max-width:900px) {
+ .oracle-workspace { overflow:auto; }
+ .oracle-publication { grid-template-columns:1fr; gap:18px; }
+ .oracle-proof-path { margin-top:12px; }
+ .oracle-workspace .ex-shell { flex-direction:column; flex:none; }
+ .oracle-workspace .ex-rail { width:100%; max-height:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; overflow:visible; }
+ .oracle-workspace .ex-rail > .lib-search, .oracle-workspace .ex-rail-head { grid-column:1/-1; }
+ .oracle-workspace .ex-group-body { max-height:160px; overflow:auto; }
+ .oracle-workspace .ex-body { overflow:visible; }
+ .ex-table-scroll { max-height:65vh; flex:none; }
+ .ex-views { gap:4px 15px; }
+}
+@media (max-width:520px) {
+ .oracle-publication { padding:22px 16px; }
+ .oracle-workspace .ex-rail { grid-template-columns:1fr; }
+ .oracle-workspace .ex-group { display:none; }
+ .oracle-workspace .ex-rail-head { display:none; }
+ .oracle-workspace .ex-body table.data { min-width:570px; }
+ .ex-views { padding:8px 12px 0; gap:0 14px; }
+ .ex-context { padding:10px 12px; }
+}
+
+@media (max-width:520px) {
+ .oracle-workspace .ex-rail { max-height:230px; overflow-y:auto; }
+ .oracle-workspace .ex-group { display:flex; }
+ .oracle-workspace .ex-rail-head { display:flex; }
+}
+
+
+/* Separate current source review from cryptographic snapshot publication. */
+.registry-review-note { padding:16px 20px; background:#122129; border-bottom:1px solid #8fb4c926; color:#aebfc7; font-size:12px; line-height:1.65; }
+.registry-review-note>div { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 20px; }
+.registry-review-note strong { color:#dce6eb; font-size:14px; font-weight:500; }
+.registry-review-note span { font-family:var(--font-mono); font-size:11px; }
+.registry-review-note p { margin:6px 0; max-width:100ch; }
+.registry-record { max-width:1080px; margin:auto; }
+.registry-record h1 { font-size:clamp(25px,3vw,42px); }
+.registry-record>.eyebrow { margin-top:28px; }
+.registry-evidence { margin:0 0 24px; }
+.registry-evidence>div { display:grid; grid-template-columns:160px minmax(0,1fr); gap:18px; padding:12px 0; border-bottom:1px solid #8fb4c918; }
+.registry-evidence dt { color:#80959f; font-size:12px; text-transform:capitalize; }
+.registry-evidence dd { margin:0; color:#d4e0e6; font-size:13px; overflow-wrap:anywhere; }
+.registry-source-links { display:flex; flex-wrap:wrap; gap:22px; margin-top:22px; }
+.registry-source-links a { color:#8fb4c9; font-size:13px; text-transform:capitalize; }
+.registry-source-links a:hover { text-decoration:underline; }
+@media(max-width:600px) { .registry-evidence>div { grid-template-columns:1fr; gap:4px; } }

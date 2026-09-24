@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import tokenized from "@/data/tokenized.json";
+import reviewedRegistry from "@/research/tokenized-preview.json";
 import fields from "@/data/fields.json";
 import sites from "@/data/sites.json";
 import reserves from "@/data/reserves.json";
@@ -9,6 +10,7 @@ import pipelines from "@/data/pipelines.json";
 import prices from "@/data/prices.json";
 import type { CatalogRow } from "@/lib/oracle-catalog";
 import CatIcon from "./CatIcon";
+import ChainMarks, { type ChainName } from "./ChainMark";
 import Flag from "@/components/Flag";
 
 /* The Pyth-explore-shaped surface: a filter rail (quick search, collapsible
@@ -40,6 +42,10 @@ interface ExploreRow {
   price?: PriceQuote;
   /** Country whose mini flag decorates the title line (record rows). */
   flagCountry?: string;
+  provider?: string;
+  /** Chains where a reviewed token exists (asset rows: the token's own chain;
+      watchlist rows: every chain with a reviewed wrapper of that stock). */
+  chains?: ChainName[];
 }
 
 interface PriceQuote {
@@ -80,18 +86,6 @@ const KIND_LABEL: Record<Kind, string> = {
   record: "Asset record",
 };
 
-const ASSET_STATUS: Record<string, { cls: string; label: string }> = {
-  live: { cls: "good", label: "Live" },
-  partial: { cls: "warn", label: "Partial" },
-  defunct: { cls: "critical", label: "Defunct" },
-  gap: { cls: "info", label: "Gap" },
-};
-
-const WATCH_STATUS: Record<string, { cls: string; label: string }> = {
-  "none-verified": { cls: "", label: "None verified" },
-  "pending-announcement": { cls: "info", label: "Pending" },
-};
-
 const DATASET_ICON: Record<string, string> = {
   reserves: "droplet",
   fields: "rig",
@@ -108,20 +102,6 @@ const DATASET_ICON: Record<string, string> = {
   noc: "bars",
   minerals: "hammer",
   electricity: "bolt",
-};
-
-const FOLDER_STYLE: Record<string, { color: string; icon: string }> = {
-  "oil-backed": { color: "#e8a33d", icon: "droplet" },
-  "commodity-gold": { color: "#c4a469", icon: "ingot" },
-  "precious-metals": { color: "#cbc3b1", icon: "diamond" },
-  uranium: { color: "#8fb4c9", icon: "atom" },
-  "base-metals": { color: "#b26a4e", icon: "hammer" },
-  "battery-metals": { color: "#2ba57e", icon: "battery" },
-  "rare-earths": { color: "#8a75e8", icon: "crystal" },
-  "tokenized-equity": { color: "#5e8ba6", icon: "chart" },
-  "context-rwa": { color: "#7e97a6", icon: "coin" },
-  "watchlist-oil-equity": { color: "#7e97a6", icon: "eye" },
-  "watchlist-mining-equity": { color: "#7e97a6", icon: "eye" },
 };
 
 const SITE_GROUP_STYLE: Record<string, { color: string; icon: string }> = {
@@ -143,12 +123,12 @@ function buildRows(catalog: CatalogRow[]): ExploreRow[] {
     key: `ds-${c.id}`,
     kind: "dataset" as const,
     symbol: c.id,
-    title: c.title,
+    title: c.id === "tokenized" ? "Archived seed registry" : c.title,
     category: c.category,
     categoryKey: `ds:${c.category}`,
     color: c.color,
     icon: DATASET_ICON[c.id] ?? "coin",
-    status: ATTESTED,
+    status: c.id === "tokenized" ? { cls: "warn", label: "Archived" } : ATTESTED,
     details: c.records,
     meta: `v${c.version}`,
     spark: c.spark,
@@ -156,69 +136,47 @@ function buildRows(catalog: CatalogRow[]): ExploreRow[] {
     record: null,
   }));
 
-  const assets: ExploreRow[] = tokenized.assets.map((a) => {
-    const price = PRICE_BY_SYMBOL[a.symbol];
+  // Solana records carry a mint; Robinhood Chain records carry an ERC-20
+  // contract. Each row keeps the evidence fields its own chain can provide.
+  const assets: ExploreRow[] = reviewedRegistry.assets.map((a) => {
+    const evm = !a.solanaMint;
+    const address = a.solanaMint ?? a.evmAddress ?? "";
     return {
-      key: `as-${a.symbol}-${a.name}`,
-      kind: "asset" as const,
-      symbol: a.symbol === "—" ? "···" : a.symbol,
-      title: a.name,
-      category: pretty(a.category),
-      categoryKey: a.category,
-      color: FOLDER_STYLE[a.category]?.color ?? "#7e97a6",
-      icon: FOLDER_STYLE[a.category]?.icon ?? "coin",
-      status: ASSET_STATUS[a.status] ?? { cls: "", label: a.status },
-      details: a.issuer,
-      meta: a.chains.join(", ") || "—",
-      spark: price?.spark ?? null,
-      datasetId: "tokenized",
-      price,
-      record: {
-        name: a.name,
-        symbol: a.symbol,
-        issuer: a.issuer,
-        underlying: a.underlying,
-        chains: a.chains.join(", "),
-        status: a.status,
-        ...(price
-          ? { "indicative price": `${fmtPrice(price)} · attested in the prices dataset` }
-          : {}),
-        note: a.relevance,
-      },
+      key: `review-${address}`, kind: "asset", symbol: a.symbol, title: a.name,
+      category: a.exposure, categoryKey: a.category, provider: a.provider, chains: a.chains as ChainName[],
+      color: a.category === "metal-fund" ? "#c4a469" : "#8fb4c9", icon: a.category === "metal-fund" ? "ingot" : "chart",
+      status: { cls: "info", label: "Reviewed" }, details: a.provider + " · " + a.resource,
+      meta: "reviewed " + a.reviewedAt.slice(0, 10), spark: null, datasetId: "tokenized",
+      record: { reviewPreview: true, name: a.name, symbol: a.symbol, issuer: a.issuer,
+        provider: a.provider, underlying: a.underlying, "underlying ticker": a.underlyingTicker,
+        exposure: a.exposure, resource: a.resource, structure: a.structure,
+        chain: evm ? `Robinhood Chain mainnet (chain id ${a.chainId})` : "Solana mainnet",
+        ...(evm
+          ? { "contract address": address, "on-chain check": `Contract code present at block ${a.onchain.block}`,
+              "token standard": `ERC-20 · ${a.onchain.decimals} decimals`, "corporate-action multiplier": a.onchain.multiplier }
+          : { "Solana mint": address, "on-chain check": "Initialized mint at slot " + a.onchain.slot, "token program": a.onchain.program }),
+        "reviewed at": a.reviewedAt, "check time": a.onchain.checkedAt,
+        "product source": a.sourceUrl, "address source": a.addressSourceUrl,
+        explorer: (evm ? "https://robinhoodchain.blockscout.com/token/" : "https://solscan.io/token/") + address, note: a.relevance },
     };
   });
 
   const watch: ExploreRow[] = tokenized.watchlist.map((w) => {
+    const matches = reviewedRegistry.assets.filter(a => a.underlyingTicker === w.ticker);
+    const found = matches.length > 0;
     const price = PRICE_BY_SYMBOL[w.ticker];
+    const chains = Array.from(new Set(matches.flatMap(a => a.chains))) as ChainName[];
     return {
-      key: `wl-${w.ticker}-${w.name}`,
-      kind: "watch" as const,
-      symbol: w.ticker,
-      title: w.name,
-      category: pretty(
-        w.sector === "mining" ? "watchlist-mining-equity" : "watchlist-oil-equity"
-      ),
-      categoryKey:
-        w.sector === "mining" ? "watchlist-mining-equity" : "watchlist-oil-equity",
-      color: "#7e97a6",
-      icon: "eye",
-      status: WATCH_STATUS[w.tokenization] ?? { cls: "", label: w.tokenization },
-      details: w.listing,
-      meta: "—",
-      spark: price?.spark ?? null,
-      datasetId: "tokenized",
-      price,
-      record: {
-        name: w.name,
-        ticker: w.ticker,
-        listing: w.listing,
-        sector: w.sector,
-        tokenization: w.tokenization,
-        ...(price
-          ? { "indicative price": `${fmtPrice(price)} · attested in the prices dataset` }
-          : {}),
-        note: "Watched for a verified tokenization event",
-      },
+      key: `wl-${w.ticker}`, kind: "watch", symbol: w.ticker, title: w.name,
+      category: w.sector === "mining" ? "Mining watchlist" : "Energy watchlist",
+      categoryKey: w.sector === "mining" ? "watchlist-mining-equity" : "watchlist-oil-equity",
+      color: "#7e97a6", icon: "eye", status: { cls: found ? "good" : "", label: found ? "Coverage found" : "Not reviewed" },
+      details: found ? matches.map(a => a.solanaMint ? a.symbol : `${a.symbol} · Robinhood`).join(", ") : w.listing,
+      meta: "—", chains, spark: price?.spark ?? null, price, datasetId: "tokenized",
+      record: { reviewPreview: true, name: w.name, ticker: w.ticker, listing: w.listing,
+        "reviewed coverage": found ? matches.map(a=>a.symbol + " (" + a.provider + ")").join(", ") : "Not reviewed in this pass; this is not evidence that no token exists.",
+        ...(found ? { "product source": matches[0].sourceUrl } : {}),
+        note: "A listed company and a tokenized wrapper are separate instruments. Search the wrapper symbol to inspect its mint and issuer." },
     };
   });
 
@@ -382,19 +340,20 @@ function FilterGroup({
   );
 }
 
-type SortCol = "symbol" | "kind" | "category" | "status" | "price" | "details" | "meta";
+type SortCol = "symbol" | "kind" | "category" | "chain" | "status" | "price" | "details" | "meta";
 
 const SORT_KEY: Record<SortCol, (r: ExploreRow) => string | number> = {
   symbol: (r) => r.symbol.toLowerCase(),
   kind: (r) => r.kind,
   category: (r) => r.category,
+  chain: (r) => (r.chains ?? []).join(" + ") || "~",
   status: (r) => r.status.label,
   price: (r) => r.price?.price ?? -1,
   details: (r) => r.details.toLowerCase(),
   meta: (r) => r.meta.toLowerCase(),
 };
 
-const SKELETON_WIDTHS = [72, 48, 64, 52, 88, 44, 60];
+const SKELETON_WIDTHS = [72, 48, 64, 36, 52, 88, 44, 60];
 
 export default function ExplorerCatalog({
   catalog,
@@ -417,6 +376,7 @@ export default function ExplorerCatalog({
   const [kinds, setKinds] = useState<Set<string>>(new Set());
   const [cats, setCats] = useState<Set<string>>(new Set());
   const [statuses, setStatuses] = useState<Set<string>>(new Set());
+  const [providers, setProviders] = useState<Set<string>>(new Set());
   const [sort, setSort] = useState<{ col: SortCol; dir: 1 | -1 } | null>(null);
 
   const q = query.trim().toLowerCase();
@@ -555,11 +515,12 @@ export default function ExplorerCatalog({
   const filtered = useMemo(() => {
     const out = rows.filter((r) => {
       if (kinds.size && !kinds.has(r.kind)) return false;
+      if (providers.size && (!r.provider || !providers.has(r.provider))) return false;
       if (cats.size && !cats.has(r.categoryKey)) return false;
       if (statuses.size && !statuses.has(r.status.label)) return false;
       if (
         q &&
-        !`${r.symbol} ${r.title} ${r.category} ${r.details}`.toLowerCase().includes(q)
+        !`${r.symbol} ${r.title} ${r.category} ${r.details} ${r.meta} ${JSON.stringify(r.record ?? {})}`.toLowerCase().includes(q)
       )
         return false;
       return true;
@@ -574,11 +535,11 @@ export default function ExplorerCatalog({
       out.sort((a, b) => Number(!!b.spark) - Number(!!a.spark));
     }
     return out;
-  }, [rows, q, kinds, cats, statuses, sort]);
+  }, [rows, q, kinds, cats, statuses, providers, sort]);
 
   /* Deep hits: individual records inside the datasets, search-only. */
   const recordHits = useMemo(() => {
-    if (q.length < 2) return [];
+    if (q.length < 2 || providers.size || cats.size || statuses.size || (kinds.size && !kinds.has("record"))) return [];
     const all = plantRecords ? staticRecords.concat(plantRecords) : staticRecords;
     const hits: ExploreRow[] = [];
     for (const r of all) {
@@ -588,7 +549,7 @@ export default function ExplorerCatalog({
       }
     }
     return hits;
-  }, [q, staticRecords, plantRecords]);
+  }, [q, staticRecords, plantRecords, providers, cats, statuses, kinds]);
 
   const { kindCounts, statusCounts, catOptions } = useMemo(() => {
     const kind = new Map<string, number>();
@@ -616,13 +577,14 @@ export default function ExplorerCatalog({
     };
   }, [rows]);
 
-  const anyFilter = kinds.size > 0 || cats.size > 0 || statuses.size > 0 || query.length > 0;
+  const anyFilter = providers.size > 0 || kinds.size > 0 || cats.size > 0 || statuses.size > 0 || query.length > 0;
   const clearAll = () => {
     bumpEpoch();
     setKinds(new Set());
     setCats(new Set());
     setStatuses(new Set());
     setQuery("");
+    setProviders(new Set());
   };
 
   const open = (r: ExploreRow) => {
@@ -651,7 +613,9 @@ export default function ExplorerCatalog({
     </th>
   );
 
-  const renderRow = (r: ExploreRow) => (
+  const renderRow = (r: ExploreRow) => {
+    const address = r.kind === "asset" ? r.record?.["Solana mint"] ?? r.record?.["contract address"] : undefined;
+    return (
     <tr key={r.key} className="catalog-row" onClick={() => open(r)}>
       <td>
         <span className="cat-id">
@@ -667,7 +631,7 @@ export default function ExplorerCatalog({
             )}
           </span>
           <span>
-            <span className="mono catalog-name">{r.symbol}</span>
+            <button className="mono catalog-name ex-open" onClick={(event) => { event.stopPropagation(); open(r); }} aria-label={`Open ${r.symbol}: ${r.title}`}>{r.symbol}</button>
             <br />
             <span className="dim" style={{ fontSize: 11.5 }}>
               {r.flagCountry && <Flag country={r.flagCountry} />}
@@ -680,11 +644,16 @@ export default function ExplorerCatalog({
       <td className="mono dim" style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>
         {r.category}
       </td>
+      <td className="chain-cell">
+        {r.kind === "dataset" || r.kind === "record" ? <span className="dimmer mono" style={{ fontSize: 11 }}>—</span> : <ChainMarks chains={r.chains ?? []} />}
+      </td>
       <td>
         <span className={`badge ${r.status.cls}`}>{r.status.label}</span>
       </td>
       <td className="mono" style={{ fontSize: 12, whiteSpace: "nowrap" }}>
-        {r.price ? (
+        {typeof address === "string" ? (
+          <span title={address}>{address.slice(0, 6)}…{address.slice(-4)}</span>
+        ) : r.price ? (
           <>
             {fmtPrice(r.price)}
             {r.price.changePct !== null && (
@@ -713,7 +682,8 @@ export default function ExplorerCatalog({
       </td>
       <td className="mono catalog-go" aria-hidden="true">→</td>
     </tr>
-  );
+    );
+  };
 
   return (
     <div className="ex-shell">
@@ -746,8 +716,11 @@ export default function ExplorerCatalog({
           selected={kinds}
           onToggle={toggle(kinds, setKinds)}
         />
+        <FilterGroup title="Issuer program"
+          options={["xStocks", "Ondo", "Backpack", "Robinhood"].map(p => ({ key: p, label: p, count: reviewedRegistry.assets.filter(a => a.provider === p).length }))}
+          selected={providers} onToggle={toggle(providers, setProviders)} />
         <FilterGroup
-          title="Registry"
+          title="Exposure"
           options={catOptions}
           selected={cats}
           onToggle={toggle(cats, setCats)}
@@ -769,16 +742,35 @@ export default function ExplorerCatalog({
       </aside>
 
       <div className="ex-body">
+        <section className="registry-review-note" aria-label="Registry review status">
+          <div><strong>Solana and Robinhood Chain coverage, refreshed</strong><span>{reviewedRegistry.assets.length} issuer-linked tokens · reviewed {reviewedRegistry.meta.reviewedAt.slice(0, 10)}</span></div>
+          <p>Resource funds, company shares and equity benchmarks. Curated coverage; each mint or contract is checked on its chain&apos;s mainnet. This research preview is not covered by the published dataset anchor.</p>
+          <button className="ex-clear" onClick={() => { setKinds(new Set(["asset"])); setCats(new Set()); setStatuses(new Set()); setProviders(new Set()); setQuery(""); }}>Explore reviewed assets →</button>
+        </section>
+        <nav className="ex-views" aria-label="Catalog views">
+          {[{ key: "", label: "All records", count: rows.length },
+            { key: "dataset", label: "Datasets", count: kindCounts.get("dataset") ?? 0 },
+            { key: "asset", label: "Tokenized assets", count: kindCounts.get("asset") ?? 0 },
+            { key: "watch", label: "Watchlist", count: kindCounts.get("watch") ?? 0 }].map((view) => (
+            <button key={view.key} aria-pressed={view.key ? kinds.size === 1 && kinds.has(view.key) : kinds.size === 0}
+              onClick={() => { setKinds(view.key ? new Set([view.key]) : new Set()); setCats(new Set()); setStatuses(new Set()); setProviders(new Set()); bumpEpoch(); }}>
+              {view.label}{" "}<span>{view.count}</span>
+            </button>
+          ))}
+        </nav>
+        <p className="ex-context">Attestations verify publication integrity, not the accuracy of source data.</p>
+        <div className="ex-table-scroll" role="region" aria-label="Catalog results" tabIndex={0}>
         <table className="data catalog explore">
           <thead>
             <tr>
               {sortableTh("symbol", "Symbol")}
               {sortableTh("kind", "Type")}
               {sortableTh("category", "Category")}
+              {sortableTh("chain", "Chain")}
               {sortableTh("status", "Status")}
-              {sortableTh("price", "Indicative")}
+              {sortableTh("price", "Mint / quote")}
               {sortableTh("details", "Details")}
-              {sortableTh("meta", "Version · Chains")}
+              {sortableTh("meta", "Version")}
               <th>Trend · 52w</th>
               <th aria-hidden="true"></th>
             </tr>
@@ -808,6 +800,9 @@ export default function ExplorerCatalog({
             </tbody>
           ) : (
             <tbody key={epoch} className="ex-rows">
+              {!filtered.length && !recordHits.length && (
+                <tr><td colSpan={9} className="ex-empty">{plantsLoading ? "Searching asset records…" : "No matching records. Try a company, country or dataset name, or clear your filters."}</td></tr>
+              )}
               {filtered.map(renderRow)}
               {recordHits.length > 0 && (
                 <tr className="ex-sep">
@@ -821,6 +816,7 @@ export default function ExplorerCatalog({
             </tbody>
           )}
         </table>
+        </div>
         <div className="ex-foot mono">
           {filtered.length} results
           {recordHits.length > 0 &&
