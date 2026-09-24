@@ -44,6 +44,13 @@ const DISPLAY: Record<
   reserves: { category: "Crude reserves", color: "#5e8ba6", recordsKey: "countries", recordsNoun: "countries" },
   fields: { category: "Upstream assets", color: "#e8a33d", recordsKey: "fields", recordsNoun: "fields" },
   tokenized: { category: "RWA registry", color: "#cbc3b1", recordsKey: "assets", recordsNoun: "assets" },
+  registry: {
+    category: "Tokenization registry",
+    color: "#8fb4c9",
+    recordsKey: "assets",
+    recordsNoun: "reviewed tokens",
+    schedule: "issuer lists re-reviewed on change · mint and contract checks dated per record",
+  },
   market: { category: "Market structure", color: "#8fb4c9", recordsKey: null, recordsNoun: "sample series" },
   sites: { category: "Minerals & nuclear", color: "#b26a4e", recordsKey: "sites", recordsNoun: "sites" },
   plants: { category: "Power infrastructure", color: "#5fd4ae", recordsKey: "plants", recordsNoun: "plants" },

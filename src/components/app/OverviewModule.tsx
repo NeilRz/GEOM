@@ -247,7 +247,7 @@ export default function OverviewModule({ data }: { data: AppData }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.anchors.map((a) => (
+                    {data.anchors.map((a, i) => (
                       <tr key={a.signature}>
                         <td className="mono dim" style={{ fontSize: 11.5 }}>{a.anchoredAt}</td>
                         <td className="mono dim">{a.cluster}</td>
@@ -255,10 +255,14 @@ export default function OverviewModule({ data }: { data: AppData }) {
                           {a.manifestSha256}
                         </td>
                         <td>
-                          {a.manifestSha256 === data.manifestHash ? (
+                          {/* Only the newest anchor is "current". Earlier anchors of the
+                              same manifest are heartbeats (weekly or forced re-anchors). */}
+                          {a.manifestSha256 !== data.manifestHash ? (
+                            <span className="badge">superseded</span>
+                          ) : i === 0 ? (
                             <span className="badge good">current</span>
                           ) : (
-                            <span className="badge">superseded</span>
+                            <span className="badge plain">re-anchored</span>
                           )}
                         </td>
                         <td>

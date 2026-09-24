@@ -3,7 +3,9 @@
 # WPSR releases Wednesdays ~10:30 ET; we ingest Wednesday evening UTC with a
 # Friday catch-up for holiday-delayed releases. If the data changed, the job
 # re-anchors the dataset manifest on Solana and pushes the new dataset +
-# anchor history to main. The push uses GITHUB_TOKEN, which does NOT trigger
+# anchor history to main. The Wednesday run anchors even when nothing
+# changed, so the oracle carries a fresh weekly commitment regardless of
+# release timing (a same-digest anchor is a heartbeat, not a new version). The push uses GITHUB_TOKEN, which does NOT trigger
 # other workflows — deploy-geom.yml therefore also listens for this
 # workflow's completion via workflow_run.
 #
@@ -71,14 +73,14 @@ jobs:
         run: echo "changed=$(git status --porcelain src/data | wc -l)" >> "$GITHUB_OUTPUT"
 
       - name: Anchor manifest on Solana
-        if: steps.diff.outputs.changed != '0' || inputs.force_anchor
+        if: steps.diff.outputs.changed != '0' || inputs.force_anchor || github.event.schedule == '30 21 * * 3'
         run: npm run anchor
         env:
           ORACLE_SIGNER_KEY: ${{ secrets.ORACLE_SIGNER_KEY }}
           SOLANA_CLUSTER: ${{ vars.SOLANA_CLUSTER || 'devnet' }}
 
       - name: Commit and push
-        if: steps.diff.outputs.changed != '0' || inputs.force_anchor
+        if: steps.diff.outputs.changed != '0' || inputs.force_anchor || github.event.schedule == '30 21 * * 3'
         run: |
           git config user.name "geom-oracle-bot"
           git config user.email "geom-oracle-bot@users.noreply.github.com"
@@ -87,6 +89,8 @@ jobs:
           git add src/data
           if [ "${{ steps.diff.outputs.changed }}" != "0" ]; then
             git commit -m "EIA WPSR ingest: week ending $(node -p "require('./src/data/eia.json').meta.version")"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            git commit -m "Weekly heartbeat anchor (no dataset change)"
           else
             git commit -m "Re-anchor manifest (forced dispatch, no dataset change)"
           fi

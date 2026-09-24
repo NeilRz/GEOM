@@ -1,0 +1,1831 @@
+{
+  "meta": {
+    "id": "registry",
+    "version": "2026-09-24",
+    "reviewedAt": "2026-09-24T13:30:27.085Z",
+    "title": "Tokenized resources and securities on Solana and Robinhood Chain",
+    "note": "Curated resource exposure plus selected equity benchmarks, not an exhaustive asset list. Source review confirms published product and mint or contract information; it is not a custody audit or liquidity guarantee.",
+    "chains": {
+      "Solana": {
+        "explorer": "https://solscan.io/token/"
+      },
+      "Robinhood Chain": {
+        "chainId": 4663,
+        "explorer": "https://robinhoodchain.blockscout.com/token/"
+      }
+    },
+    "sources": [
+      "https://xstocks.com/products",
+      "https://docs.ondo.finance/addresses",
+      "https://learn.backpack.exchange/",
+      "https://www.geckoterminal.com/category/tokenized-stocks/solana",
+      "https://api.robinhood.com/rhj/assets",
+      "https://docs.robinhood.com/chain/contracts"
+    ]
+  },
+  "assets": [
+    {
+      "symbol": "PALLx",
+      "name": "abrdn Physical Palladium Shares xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "abrdn Physical Palladium Shares ETF",
+      "underlyingTicker": "PALL",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsTTtPA5V19YwHKDv4xeVXNM6kdsQNJvg3MyWkRUckt",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/abrdn-physical-palladium-shares-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "10499415000000",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Palladium"
+    },
+    {
+      "symbol": "PPLTx",
+      "name": "abrdn Physical Platinum Shares xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "abrdn Physical Platinum Shares ETF",
+      "underlyingTicker": "PPLT",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xst6eFD4YT6sz9RLMysN9SyvaZWtraSdVJQGu5ZkAme",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/abrdn-physical-platinum-shares-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "7967152999996",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Platinum"
+    },
+    {
+      "symbol": "ALBx",
+      "name": "Albemarle xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Albemarle",
+      "underlyingTicker": "ALB",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsGea4488p7ydWQTQMYxtvCXDJiAJwgt4HsoKiKrGa3",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/albemarle-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "4654590589969",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Lithium"
+    },
+    {
+      "symbol": "AAPLx",
+      "name": "Apple xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Apple",
+      "underlyingTicker": "AAPL",
+      "category": "equity-benchmark",
+      "exposure": "Company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/apple-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "15376281262124",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "LNGx",
+      "name": "Cheniere Energy xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Cheniere Energy",
+      "underlyingTicker": "LNG",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsYLZdcMYST418xZhTV6KaHqr8BWqaKS3J45ywqigF9",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/cheniere-energy-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "4993195653528",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Liquefied natural gas"
+    },
+    {
+      "symbol": "CVXx",
+      "name": "Chevron xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Chevron",
+      "underlyingTicker": "CVX",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsNNMt7WTNA2sV3jrb1NNfNgapxRF5i4i6GcnTRRHts",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/chevron-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "9478398467928",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "COPx",
+      "name": "ConocoPhillips xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "ConocoPhillips",
+      "underlyingTicker": "COP",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xs58CxmUcgT17reeVV64se747XuRfjsJQnpb8DX9TDq",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/conocophillips-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "5741901526388",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "UUUUx",
+      "name": "Energy Fuels Inc. xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Energy Fuels Inc.",
+      "underlyingTicker": "UUUU",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsYHvpLWfTfqdLkPbCc4eUT21eH521BRTXBypgzpEDH",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/energy-fuels-inc-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "55299999981420",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Uranium and rare earths"
+    },
+    {
+      "symbol": "XLEx",
+      "name": "Energy Select Sector SPDR Fund xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Energy Select Sector SPDR Fund",
+      "underlyingTicker": "XLE",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xs54CrhmpVp6uxZXwgSTegrRH2kShh88XFPzgf4BExu",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/energy-select-sector-spdr-fund-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "17499999886008",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Energy equities"
+    },
+    {
+      "symbol": "XOMx",
+      "name": "Exxon Mobil xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Exxon Mobil",
+      "underlyingTicker": "XOM",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsaHND8sHyfMfsWPj6kSdd5VwvCayZvjYgKmmcNL5qh",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/exxon-mobil-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "11974789819131",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "FCXx",
+      "name": "Freeport-McMoRan xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Freeport-McMoRan",
+      "underlyingTicker": "FCX",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsT9Z9BYM5Bp2JAuKVgw1XLdENGyvQwC5C2gAuzeKyY",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/freeport-mcmoran-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "9564801530368",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Copper and gold"
+    },
+    {
+      "symbol": "COPXx",
+      "name": "Global X Copper Miners xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Global X Copper Miners",
+      "underlyingTicker": "COPX",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsybfiKkD4UmjkAGT2uR8X2sq9AWFtvGJM2KTffoALZ",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/global-x-copper-miners-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "17591051454818",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Copper mining equities"
+    },
+    {
+      "symbol": "URAx",
+      "name": "Global X Uranium ETF xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Global X Uranium ETF",
+      "underlyingTicker": "URA",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xsq9sEQjYiUTSZ55RrbHAzVfz8HotwFGrqgxkgiv4LB",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/global-x-uranium-etf-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "20699999999999",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Uranium equities"
+    },
+    {
+      "symbol": "GLDx",
+      "name": "Gold xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "SPDR Gold Shares",
+      "underlyingTicker": "GLD",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/gold-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "11626757389747",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Gold"
+    },
+    {
+      "symbol": "SLVx",
+      "name": "iShares Silver Trust xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "iShares Silver Trust",
+      "underlyingTicker": "SLV",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsxAd6okt8y1RRK6gNg7iJaqiWNiq5Md5EDf3ZrF2dm",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/ishares-silver-trust-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "16355559795447",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Silver"
+    },
+    {
+      "symbol": "MPx",
+      "name": "MP Materials xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "MP Materials",
+      "underlyingTicker": "MP",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsFARXCfXKCdu6BxV2WACBt3Dk88nxLujoqPzyyBib9",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/mp-materials-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "8568344186669",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Rare earths"
+    },
+    {
+      "symbol": "QQQx",
+      "name": "Nasdaq xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Invesco QQQ Trust",
+      "underlyingTicker": "QQQ",
+      "category": "index-fund",
+      "exposure": "Equity index fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/nasdaq-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "8436034778899",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "NEMx",
+      "name": "Newmont xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Newmont",
+      "underlyingTicker": "NEM",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XssuE11NLek5vAeHNS2Jm8PFvT4PE7dtnpZwasWTGDT",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/newmont-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "5991312596734",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Gold"
+    },
+    {
+      "symbol": "NVDAx",
+      "name": "NVIDIA xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "NVIDIA",
+      "underlyingTicker": "NVDA",
+      "category": "equity-benchmark",
+      "exposure": "Company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/nvidia-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "32127402208664",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "OXYx",
+      "name": "Occidental Petroleum xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Occidental Petroleum",
+      "underlyingTicker": "OXY",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsRNiTxDeRvxTEMTV5BC98N7cTZXxjNdLnudR8YeB2b",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/occidental-petroleum-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "11268663724293",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "RGLDx",
+      "name": "Royal Gold xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Royal Gold",
+      "underlyingTicker": "RGLD",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsgiYbKzzyYzuxRj1R4E6rvfVccASCGepmWEMpJdFG2",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/royal-gold-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "2964573348485",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Gold royalties company"
+    },
+    {
+      "symbol": "SCCOx",
+      "name": "Southern Copper xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Southern Copper",
+      "underlyingTicker": "SCCO",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsQD8itHh5CdrWMiH8cZPB55KSATjdXsxcSJJ14YCFD",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/southern-copper-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "3498542274052",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Copper"
+    },
+    {
+      "symbol": "SPYx",
+      "name": "SP500 xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "SPDR S&P 500 ETF Trust",
+      "underlyingTicker": "SPY",
+      "category": "index-fund",
+      "exposure": "Equity index fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/sp500-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "9523127328663",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "XOPx",
+      "name": "SPDR S&P Oil & Gas Exploration & Production ETF xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "SPDR S&P Oil & Gas Exploration & Production ETF",
+      "underlyingTicker": "XOP",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsAk6BoV4kBXUM6WXodKyM21CN92G9jArwAzFvbh3LX",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/spdr-s-p-oil-gas-exploration-production-etf-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "6099999999998",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas equities"
+    },
+    {
+      "symbol": "USARx",
+      "name": "USA Rare Earth Inc. xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "USA Rare Earth Inc.",
+      "underlyingTicker": "USAR",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsJJneENiaBPqqcdK1gMsfwi9cbw111azigzRYHoctX",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/usa-rare-earth-inc-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "49299999991892",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Rare earths"
+    },
+    {
+      "symbol": "VLOx",
+      "name": "Valero Energy xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "Valero Energy",
+      "underlyingTicker": "VLO",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsmMjZH2ex52ecoCqBN1sMADoWQziXpe9j6z6QVmafF",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/valero-energy-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "2479133955871",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil refining"
+    },
+    {
+      "symbol": "GDXx",
+      "name": "VanEck Gold Miners xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "VanEck Gold Miners",
+      "underlyingTicker": "GDX",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsVRhRg9eRE9PrsoPsAt5Mifa8mfjm9R3vdw6orp54j",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/vaneck-gold-miners-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "12742846738112",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Gold mining equities"
+    },
+    {
+      "symbol": "NLRx",
+      "name": "VanEck Uranium and Nuclear xStock",
+      "issuer": "Backed Assets (JE) Limited",
+      "provider": "xStocks",
+      "underlying": "VanEck Uranium and Nuclear",
+      "underlyingTicker": "NLR",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tracker certificate",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XsTSfxoQry8okZoGMN5t6mExibDq3gA2NDLJeLztX7E",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://assets.backed.fi/products/vaneck-uranium-and-nuclear-xstock",
+      "addressSourceUrl": "https://xstocks.com/products",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 8,
+        "supplyRaw": "8759197907585",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Uranium and nuclear equities"
+    },
+    {
+      "symbol": "BNOon",
+      "name": "US Brent Oil Fund (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "US Brent Oil Fund",
+      "underlyingTicker": "BNO",
+      "category": "commodity-futures-fund",
+      "exposure": "Commodity futures fund",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "BAU83kqEqhyiexfAMQhZZE5KnGogSqh17fJc44Sondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/bnoon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a futures-based fund; fund returns can diverge from spot commodity prices. No claim to physical delivery.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "471448656473",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Brent crude oil"
+    },
+    {
+      "symbol": "CVXon",
+      "name": "Chevron (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "Chevron",
+      "underlyingTicker": "CVX",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "7tgKziACteG26VjV5xKufojKxwTgCFyTwmWUmz5ondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/cvxon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "94159135858",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "FCXon",
+      "name": "Freeport-McMoRan (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "Freeport-McMoRan",
+      "underlyingTicker": "FCX",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "CY8ttw5rYCT6fFBJwqXofefqa7Ji9E8zfLmhRLmondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/fcxon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "318734470728",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Copper and gold"
+    },
+    {
+      "symbol": "GLDon",
+      "name": "SPDR Gold Shares (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "SPDR Gold Shares",
+      "underlyingTicker": "GLD",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "hWfiw4mcxT8rnNFkk6fsCQSxoxgZ9yVhB6tyeVcondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/gldon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "45768226624",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Gold"
+    },
+    {
+      "symbol": "MPon",
+      "name": "MP Materials (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "MP Materials",
+      "underlyingTicker": "MP",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "XwFm5GiKPVTvPiEbQpdc6vJbFEpsUXRMf6TcSxnondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/mpon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "736219883209",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Rare earths"
+    },
+    {
+      "symbol": "NEMon",
+      "name": "Newmont (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "Newmont",
+      "underlyingTicker": "NEM",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Dig28Tf1ufhCBAsjTmFkXCgcNgMqDMYj5A2rDQmondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/nemon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "4949728224994",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Gold"
+    },
+    {
+      "symbol": "PALLon",
+      "name": "abrdn Physical Palladium Shares ETF (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "abrdn Physical Palladium Shares ETF",
+      "underlyingTicker": "PALL",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "P7hTXnKk2d2DyqWnefp5BSroE1qjjKpKxg9SxQqondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/pallon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "30726033966",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Palladium"
+    },
+    {
+      "symbol": "PPLTon",
+      "name": "abrdn Physical Platinum Shares ETF (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "abrdn Physical Platinum Shares ETF",
+      "underlyingTicker": "PPLT",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "DwRtkbsaQMGAS3oMeEGYh6M5vH4X9WECsQgqHjAondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/pplton",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "7041088609",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Platinum"
+    },
+    {
+      "symbol": "SLVon",
+      "name": "iShares Silver Trust (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "iShares Silver Trust",
+      "underlyingTicker": "SLV",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "iy11ytbSGcUnrjE6Lfv78TFqxKyUESfku1FugS9ondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/slvon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "26624583741631",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Silver"
+    },
+    {
+      "symbol": "UNGon",
+      "name": "US Natural Gas Fund (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "US Natural Gas Fund",
+      "underlyingTicker": "UNG",
+      "category": "commodity-futures-fund",
+      "exposure": "Commodity futures fund",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "Es2ipHL7qXBcLmZ4N7LP9PHBHaWaTMTAkxDwGGjondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/ungon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a futures-based fund; fund returns can diverge from spot commodity prices. No claim to physical delivery.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "9141832817",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Natural gas"
+    },
+    {
+      "symbol": "USOon",
+      "name": "United States Oil Fund (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "United States Oil Fund",
+      "underlyingTicker": "USO",
+      "category": "commodity-futures-fund",
+      "exposure": "Commodity futures fund",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "rpydAzWdCy85HEmoQkH5PVxYtDYQWjmLxgHHadxondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/usoon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a futures-based fund; fund returns can diverge from spot commodity prices. No claim to physical delivery.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "159388315340",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "WTI crude oil"
+    },
+    {
+      "symbol": "XOMon",
+      "name": "Exxon Mobil (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "Exxon Mobil",
+      "underlyingTicker": "XOM",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "qCYD74QnXzd9pzv6pGHQKJVwoibL6sNcPQDnpDiondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/xomon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "32029222626",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "CCJon",
+      "name": "Cameco (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "Cameco",
+      "underlyingTicker": "CCJ",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "fVPj4hHHVEeUrzVnad5fvxFEPGAXD5X6wkw1Xjdondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/ccjon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "94551070433",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Uranium"
+    },
+    {
+      "symbol": "CPERon",
+      "name": "US Copper Index Fund (Ondo Tokenized)",
+      "issuer": "Ondo Global Markets",
+      "provider": "Ondo",
+      "underlying": "US Copper Index Fund",
+      "underlyingTicker": "CPER",
+      "category": "commodity-futures-fund",
+      "exposure": "Commodity futures fund",
+      "structure": "Tokenized security exposure",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "hpkpc1Xenv5oEpVefk3woWjZa9rxaJxaEaVVA4Fondo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://app.ondo.finance/assets/cperon",
+      "addressSourceUrl": "https://docs.ondo.finance/addresses",
+      "relevance": "Exposure through a futures-based fund; fund returns can diverge from spot commodity prices. No claim to physical delivery.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 9,
+        "supplyRaw": "25136819670",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Copper"
+    },
+    {
+      "symbol": "COPX",
+      "name": "Global X Copper Miners ETF · Backpack Securities",
+      "issuer": "Backpack Securities",
+      "provider": "Backpack",
+      "underlying": "Global X Copper Miners ETF",
+      "underlyingTicker": "COPX",
+      "category": "resource-equity-fund",
+      "exposure": "Resource equity fund",
+      "structure": "Tokenized claim; issuer redemption into securities",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "CzLTZppPdZtTjyq3WGpHLstoc3GLhu7zH5Zg6xUa6Gv5",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://learn.backpack.exchange/blog/tokenized-global-x-copper-miners-etf-copx",
+      "addressSourceUrl": "https://learn.backpack.exchange/blog/tokenized-global-x-copper-miners-etf-copx",
+      "relevance": "Issuer documents conversion into the underlying security through Backpack Securities. Eligibility and issuer terms apply. An exchange stock or perpetual listing alone is not evidence of a withdrawable Solana token.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 6,
+        "supplyRaw": "3529346080",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Copper mining equities"
+    },
+    {
+      "symbol": "USO",
+      "name": "United States Oil Fund · Backpack Securities",
+      "issuer": "Backpack Securities",
+      "provider": "Backpack",
+      "underlying": "United States Oil Fund",
+      "underlyingTicker": "USO",
+      "category": "commodity-futures-fund",
+      "exposure": "Commodity futures fund",
+      "structure": "Tokenized claim; issuer redemption into securities",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "USNv3NkKA27Dh4nsHJDPhW4VoEcTQmjoZyJt2dqdwFu",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://learn.backpack.exchange/blog/tokenized-united-states-oil-fund-uso",
+      "addressSourceUrl": "https://learn.backpack.exchange/blog/tokenized-united-states-oil-fund-uso",
+      "relevance": "Issuer documents conversion into the underlying security through Backpack Securities. Eligibility and issuer terms apply. An exchange stock or perpetual listing alone is not evidence of a withdrawable Solana token.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 6,
+        "supplyRaw": "1111226084",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "WTI crude oil"
+    },
+    {
+      "symbol": "MSTR",
+      "name": "Strategy Inc. · Backpack Securities",
+      "issuer": "Backpack Securities",
+      "provider": "Backpack",
+      "underlying": "Strategy Inc.",
+      "underlyingTicker": "MSTR",
+      "category": "equity-benchmark",
+      "exposure": "Company shares",
+      "structure": "Tokenized claim; issuer redemption into securities",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "MSTRdWXMeZxdE8osAQy3fA4rvTY5rgummDSMEx6U7Nz",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://learn.backpack.exchange/blog/tokenized-strategy-mstr",
+      "addressSourceUrl": "https://learn.backpack.exchange/blog/tokenized-strategy-mstr",
+      "relevance": "Issuer documents conversion into the underlying security through Backpack Securities. Eligibility and issuer terms apply. An exchange stock or perpetual listing alone is not evidence of a withdrawable Solana token.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 6,
+        "supplyRaw": "3924246195",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "MRVL",
+      "name": "Marvell Technology, Inc. · Backpack Securities",
+      "issuer": "Backpack Securities",
+      "provider": "Backpack",
+      "underlying": "Marvell Technology, Inc.",
+      "underlyingTicker": "MRVL",
+      "category": "equity-benchmark",
+      "exposure": "Company shares",
+      "structure": "Tokenized claim; issuer redemption into securities",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "MRVLSjkR2ceUBukujaD3xCyHP1H3B2SzpsNTZF546jo",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://learn.backpack.exchange/blog/tokenized-marvell-technology-mrvl",
+      "addressSourceUrl": "https://learn.backpack.exchange/blog/tokenized-marvell-technology-mrvl",
+      "relevance": "Issuer documents conversion into the underlying security through Backpack Securities. Eligibility and issuer terms apply. An exchange stock or perpetual listing alone is not evidence of a withdrawable Solana token.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 6,
+        "supplyRaw": "862455362",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company · Backpack Securities",
+      "issuer": "Backpack Securities",
+      "provider": "Backpack",
+      "underlying": "Eli Lilly and Company",
+      "underlyingTicker": "LLY",
+      "category": "equity-benchmark",
+      "exposure": "Company shares",
+      "structure": "Tokenized claim; issuer redemption into securities",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "LLYuwZ33keFihgwoxXsBawy31AiRFLFSva32TYq5TvD",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://learn.backpack.exchange/blog/tokenized-eli-lilly-lly",
+      "addressSourceUrl": "https://learn.backpack.exchange/blog/tokenized-eli-lilly-lly",
+      "relevance": "Issuer documents conversion into the underlying security through Backpack Securities. Eligibility and issuer terms apply. An exchange stock or perpetual listing alone is not evidence of a withdrawable Solana token.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 6,
+        "supplyRaw": "189785971",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "NKE",
+      "name": "NIKE, Inc. · Backpack Securities",
+      "issuer": "Backpack Securities",
+      "provider": "Backpack",
+      "underlying": "NIKE, Inc.",
+      "underlyingTicker": "NKE",
+      "category": "equity-benchmark",
+      "exposure": "Company shares",
+      "structure": "Tokenized claim; issuer redemption into securities",
+      "chains": [
+        "Solana"
+      ],
+      "status": "source-reviewed",
+      "solanaMint": "NKEda5nHhNGgjrE9nDdMvaEmkmJ96qqxzBVZEcKmjSg",
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://learn.backpack.exchange/blog/tokenized-nike-nke",
+      "addressSourceUrl": "https://learn.backpack.exchange/blog/tokenized-nike-nke",
+      "relevance": "Issuer documents conversion into the underlying security through Backpack Securities. Eligibility and issuer terms apply. An exchange stock or perpetual listing alone is not evidence of a withdrawable Solana token.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.943Z",
+        "slot": 450042967,
+        "program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "decimals": 6,
+        "supplyRaw": "9656695439",
+        "initialized": true,
+        "rpcUrl": "https://api.mainnet-beta.solana.com"
+      },
+      "resource": "Equity market benchmark"
+    },
+    {
+      "symbol": "XOM",
+      "name": "ExxonMobil Holdings Corporation · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "ExxonMobil Holdings Corporation",
+      "underlyingTicker": "XOM",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0xf9B46d3D1B22199D4D1025a9cEDB540A33F1a2d5",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.582Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "223426663740000000000",
+        "codePresent": true,
+        "multiplier": "1.001039563764661900",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Oil and gas"
+    },
+    {
+      "symbol": "USO",
+      "name": "United States Oil Fund · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "United States Oil Fund",
+      "underlyingTicker": "USO",
+      "category": "commodity-futures-fund",
+      "exposure": "Commodity futures fund",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0xa30FA36Db767ad9eD3f7a60fC79526fB4d56D344",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure through a futures-based fund; fund returns can diverge from spot commodity prices. No claim to physical delivery. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.748Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "17228797670000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "WTI crude oil"
+    },
+    {
+      "symbol": "GLD",
+      "name": "SPDR Gold Trust · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "SPDR Gold Shares",
+      "underlyingTicker": "GLD",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0xC9a981FEE1F9DEc688bb123ccDeCc63D0deBFC4e",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.439Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "22445164840000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Gold"
+    },
+    {
+      "symbol": "SLV",
+      "name": "iShares Silver Trust · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "iShares Silver Trust",
+      "underlyingTicker": "SLV",
+      "category": "metal-fund",
+      "exposure": "Metal fund exposure",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0x411eFb0E7f985935DAec3D4C3ebaEa0d0AD7D89f",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure through a listed metal fund. This token is not a directly redeemable claim to bullion. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.560Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "26972450190000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Silver"
+    },
+    {
+      "symbol": "USAR",
+      "name": "USA Rare Earth · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "USA Rare Earth",
+      "underlyingTicker": "USAR",
+      "category": "mining-equity",
+      "exposure": "Mining company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0xd917B029C761D264c6A312BBbcDA868658eF86a6",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.424Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "39819197080000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Rare earths"
+    },
+    {
+      "symbol": "CEG",
+      "name": "Constellation Energy · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "Constellation Energy",
+      "underlyingTicker": "CEG",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0xaE517A2903E68bd929Dfd15be875F8369D53e94a",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.445Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "234338000000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Nuclear and power generation"
+    },
+    {
+      "symbol": "VST",
+      "name": "Vistra · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "Vistra",
+      "underlyingTicker": "VST",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0x561e2a49212b7cCF47f2744Ccb83e200722fADBc",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.425Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "105295513020000000000",
+        "codePresent": true,
+        "multiplier": "1.001114738710796417",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Power generation"
+    },
+    {
+      "symbol": "OKLO",
+      "name": "Oklo · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "Oklo",
+      "underlyingTicker": "OKLO",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0x8B2f88497f15A18E9D4FFa1a8fFB8538399aE774",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.467Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "390585000000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Advanced nuclear"
+    },
+    {
+      "symbol": "SMR",
+      "name": "NuScale Power · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "NuScale Power",
+      "underlyingTicker": "SMR",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0x1Eebee7F74517e0279dFb09d25B0407bEEc3FDd6",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.436Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "2904418990000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Small modular reactors"
+    },
+    {
+      "symbol": "NNE",
+      "name": "Nano Nuclear Energy · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "Nano Nuclear Energy",
+      "underlyingTicker": "NNE",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0xBEF75684C43c4ea7BD18Dd532a2244674Ee8b926",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.422Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "16462582150000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Microreactors and nuclear fuel"
+    },
+    {
+      "symbol": "GEV",
+      "name": "GE Vernova · Robinhood Token",
+      "issuer": "Robinhood Assets (Jersey) Limited",
+      "provider": "Robinhood",
+      "underlying": "GE Vernova",
+      "underlyingTicker": "GEV",
+      "category": "energy-equity",
+      "exposure": "Energy company shares",
+      "structure": "ERC-20 stock token; corporate actions applied through an on-chain multiplier (ERC-8056)",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "status": "source-reviewed",
+      "evmAddress": "0x94B8AAE43A1cCc08Aa64B7D1F29b4D920aF4a0C9",
+      "chainId": 4663,
+      "reviewedAt": "2026-09-24T13:30:27.085Z",
+      "sourceUrl": "https://docs.robinhood.com/rhj",
+      "addressSourceUrl": "https://docs.robinhood.com/chain/contracts",
+      "relevance": "Exposure to a listed security, including company or fund risks. This token does not convey a direct claim to reserves, mineral output or project royalties. Issuer documents state the tokens are not offered to U.S. persons and are restricted in further jurisdictions.",
+      "onchain": {
+        "checkedAt": "2026-09-24T13:30:31.457Z",
+        "block": 71406607,
+        "chainId": 4663,
+        "decimals": 18,
+        "supplyRaw": "14334000000000000000",
+        "codePresent": true,
+        "multiplier": "1.000000000000000000",
+        "registryStatus": "ASSET_STATUS_ACTIVE",
+        "rpcUrl": "https://rpc.mainnet.chain.robinhood.com"
+      },
+      "resource": "Power generation equipment"
+    }
+  ]
+}

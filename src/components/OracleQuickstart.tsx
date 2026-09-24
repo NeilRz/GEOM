@@ -55,7 +55,8 @@ console.log(countries[0]);    // { iso: "VE", name: "Venezuela", reserves: 303, 
 //   /api/datasets/electricity  generation by fuel, 214 areas (Ember, CC BY 4.0)
 //   /api/datasets/noc          61 national oil companies (NRGI open data)
 //   /api/datasets/plants       38,378 power plants, all fuels (CC BY GEM)
-//   /api/datasets/tokenized    the tokenization registry`,
+//   /api/datasets/tokenized    the archived seed registry
+//   /api/datasets/registry     reviewed tokens on Solana and Robinhood Chain`,
   },
   {
     id: "attest",

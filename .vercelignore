@@ -3,3 +3,6 @@ vault/
 .keys/
 .claude/
 .env*
+# Retired local prototype and unused, untracked logo exports
+src/app/tokenize/
+Logo/

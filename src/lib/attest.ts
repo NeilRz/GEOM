@@ -17,6 +17,7 @@ import jodi from "@/data/jodi.json";
 import noc from "@/data/noc.json";
 import minerals from "@/data/minerals.json";
 import electricity from "@/data/electricity.json";
+import registry from "@/data/registry.json";
 
 /**
  * GAEA Oracle v2, verifiable data attestation, Solana-native.
@@ -55,6 +56,11 @@ export const DATASETS: Record<
     data: tokenized,
     title: tokenized.meta.title,
     version: tokenized.meta.version,
+  },
+  registry: {
+    data: registry,
+    title: registry.meta.title,
+    version: registry.meta.version,
   },
   market: {
     data: market,
