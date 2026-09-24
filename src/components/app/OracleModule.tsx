@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import type { DatasetDetail } from "@/lib/oracle-catalog";
 import type { AppData, AnchorRecord, OracleSelection } from "./GeomApp";
 import ExplorerCatalog from "@/components/oracle/ExplorerCatalog";
@@ -9,11 +9,6 @@ import SeriesChart from "@/components/oracle/SeriesChart";
 import VerifyCard from "@/components/oracle/VerifyCard";
 import CodeSnippets from "@/components/oracle/CodeSnippets";
 import CopyChip from "@/components/oracle/CopyChip";
-import RegistryPreviewRecord from "@/components/oracle/RegistryPreviewRecord";
-import TokenDiligence from "@/components/oracle/TokenDiligence";
-import "@/components/oracle/token-diligence.css";
-import PublicationHeader from "@/components/oracle/PublicationHeader";
-import "@/components/oracle/oracle-workspace.css";
 
 function explorerUrl(a: AnchorRecord): string {
   return `https://explorer.solana.com/tx/${a.signature}${
@@ -63,7 +58,9 @@ function RecordPanel({
                 {COUNTRY_KEYS.has(k) && typeof v === "string" && (
                   <Flag country={v} />
                 )}
-                {typeof v === "boolean" ? (v ? "yes" : "no") : String(v)}
+                {typeof v === "boolean" ? (v ? "yes" : "no") : typeof v === "string" && /^https:\/\//.test(v) ? (
+                  <a href={v} target="_blank" rel="noreferrer">{v.replace(/^https:\/\//, "")} ↗</a>
+                ) : String(v)}
               </span>
             </div>
           ))}
@@ -136,9 +133,9 @@ function DatasetDetailView({
         <div className="o-head-badges">
           <span className="badge good">attested</span>
           {anchorIsCurrent ? (
-            <span className="badge good">manifest matches</span>
+            <span className="badge good">anchor current</span>
           ) : (
-            <span className="badge warn">manifest changed</span>
+            <span className="badge warn">anchor stale</span>
           )}
           <span className="badge plain">
             {detail.timeseries
@@ -158,7 +155,7 @@ function DatasetDetailView({
             <RecordPanel
               record={record}
               lngLat={selection.lngLat}
-              detail={detail.id === "tokenized" ? { ...detail, title: "Archived seed registry", description: "Historical signed snapshot, retained for reproducibility. Its coverage gaps and market-size estimates are outdated. Current coverage lives in the registry dataset, which is signed and anchored separately." } : detail}
+              detail={detail}
               onShowMap={onShowMap}
             />
           )}
@@ -388,18 +385,13 @@ export default function OracleModule({
   ) => void;
   onShowMap: (lngLat: [number, number], props?: Record<string, unknown>) => void;
 }) {
-  const [mode, setMode] = useState<"diligence" | "catalog">("diligence");
   const detail = selection.dataset ? data.details[selection.dataset] : null;
-
-  if (selection.record?.reviewPreview === true) {
-    return <RegistryPreviewRecord record={selection.record} onBack={() => onSelect(null)} />;
-  }
 
   if (detail) {
     return (
-      <main className="main oracle-detail">
+      <main className="main">
         <DatasetDetailView
-          detail={detail.id === "tokenized" ? { ...detail, title: "Archived seed registry", description: "Historical signed snapshot retained for reproducibility. Its gap claims and market estimates are outdated. Use the registry dataset for current coverage on Solana and Robinhood Chain; it carries its own signature." } : detail}
+          detail={detail}
           data={data}
           selection={selection}
           onBack={() => onSelect(null)}
@@ -410,15 +402,10 @@ export default function OracleModule({
   }
 
   return (
-    <section className="oracle-workspace" aria-label="Oracle workspace">
-      <nav className="oracle-modes" aria-label="Oracle workflows">
-        <button aria-pressed={mode === "diligence"} onClick={() => setMode("diligence")}>Token due diligence</button>
-        <button aria-pressed={mode === "catalog"} onClick={() => setMode("catalog")}>Datasets & registry</button>
-      </nav>
-      {mode === "diligence" ? <TokenDiligence /> : <>
-        <PublicationHeader data={data} />
-        <ExplorerCatalog catalog={data.catalog} onOpenDataset={(id) => onSelect(id)} onOpenRecord={onSelectRecord} />
-      </>}
-    </section>
+    <ExplorerCatalog
+      catalog={data.catalog}
+      onOpenDataset={(id) => onSelect(id)}
+      onOpenRecord={onSelectRecord}
+    />
   );
 }

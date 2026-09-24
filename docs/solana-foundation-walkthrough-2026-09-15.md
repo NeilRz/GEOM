@@ -1,5 +1,7 @@
 # GEOM | Solana Foundation website walkthrough
 
+> Update 24 September 2026: the oracle keeps the original catalog layout. There are no workflow tabs and no token due diligence page; the catalog opens directly, now with 17 signed datasets, a Chain column and the reviewed registry of Solana and Robinhood Chain tokens. Skip the due diligence beats below; the read-only inspect API still exists.
+
 September 15, 2026. Suggested duration: 8–10 minutes, plus questions.
 
 ## Before the call

@@ -255,7 +255,7 @@ export default function GeomApp({ data }: { data: AppData }) {
                   rel="noreferrer"
                   title="View the latest anchor transaction on Solana Explorer"
                 >
-                  {anchorIsCurrent ? "manifest matches" : "manifest changed"} ↗
+                  {anchorIsCurrent ? "anchor current" : "anchor stale"} ↗
                 </a>
               ) : (
                 <span className="badge warn">no anchor</span>

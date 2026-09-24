@@ -1,5 +1,7 @@
 # GEOM utility script | Solana Foundation, 15 September 2026
 
+> Update 24 September 2026: the oracle keeps the original catalog layout. There are no workflow tabs and no token due diligence page; the catalog opens directly, now with 17 signed datasets, a Chain column and the reviewed registry of Solana and Robinhood Chain tokens. Skip the due diligence beats below; the read-only inspect API still exists.
+
 Spoken script for the "five modules" segment. About 6 minutes, plus questions.
 Memorise the spine first, then the beats. Every module has the same shape:
 what it is, the utility, what is live versus planned.

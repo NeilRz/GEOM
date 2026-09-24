@@ -656,6 +656,9 @@ table.data th.num { text-align: right; }
 
 table.catalog { min-width: 860px; }
 .catalog-row { cursor: pointer; }
+.chain-cell { white-space: nowrap; }
+.chain-marks { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-2); vertical-align: middle; }
+.chain-mark { display: block; flex: none; }
 .catalog-name { color: var(--ink); font-size: 13px; }
 .catalog-row:hover .catalog-name { color: var(--glacial-bright); }
 .catalog-go { color: var(--ink-3); text-align: right; }
