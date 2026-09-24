@@ -12,6 +12,7 @@ export default function SiteFooter() {
   if (
     MARKETING.has(pathname) ||
     pathname.startsWith("/app") ||
+    pathname.startsWith("/engine/holder") ||
     pathname === "/overview"
   )
     return null;
