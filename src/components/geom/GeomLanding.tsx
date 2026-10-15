@@ -257,6 +257,42 @@ export default function GeomLanding() {
       });
     })();
 
+    /* ── contract-address copy button ── */
+    const caBtn = root.querySelector<HTMLButtonElement>(".ca-copy");
+    if (caBtn) {
+      let t: ReturnType<typeof setTimeout>;
+      const onCopy = async () => {
+        const v = caBtn.dataset.copy;
+        if (!v) return;
+        try {
+          await navigator.clipboard.writeText(v);
+          caBtn.textContent = "Copied ✓";
+          caBtn.classList.add("done");
+          clearTimeout(t);
+          t = setTimeout(() => {
+            caBtn.textContent = "Copy";
+            caBtn.classList.remove("done");
+          }, 1600);
+        } catch {
+          /* Clipboard API blocked (permission denied, old browser).
+             Select the address instead so the user can copy manually. */
+          const addr = root.querySelector(".ca-v");
+          if (addr) {
+            const r = document.createRange();
+            r.selectNodeContents(addr);
+            const sel = window.getSelection();
+            sel?.removeAllRanges();
+            sel?.addRange(r);
+          }
+        }
+      };
+      caBtn.addEventListener("click", onCopy);
+      cleanups.push(() => {
+        clearTimeout(t);
+        caBtn.removeEventListener("click", onCopy);
+      });
+    }
+
     return () => cleanups.forEach((c) => c());
   }, []);
 
